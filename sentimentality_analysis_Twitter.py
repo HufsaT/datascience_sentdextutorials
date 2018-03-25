@@ -15,6 +15,12 @@ from credentialsTwitter import *    # This will allow us to use the keys as vari
 from textblob import TextBlob
 import re
 
+#Import Library of Gaussian Naive Bayes model
+from sklearn.naive_bayes import GaussianNB
+
+#assigning predictor and target variables
+x= np.array([[-3,7],[1,5], [1,2], [-2,0], [2,3], [-4,0], [-1,1], [1,1], [-2,2], [2,7], [-4,1], [-2,7]])
+Y = np.array([3, 3, 3, 3, 4, 3, 3, 4, 3, 4, 4, 4])
 
 # API's setup:
 def twitter_setup():
@@ -86,6 +92,7 @@ def clean_tweet(tweet):
     links and special characters using regex.
     '''
     return ' '.join(re.sub("(@[A-Za-z0-9]+)|([^0-9A-Za-z \t])|(\w+:\/\/\S+)", " ", tweet).split())
+
 
 def analize_sentiment(tweet):
     '''
