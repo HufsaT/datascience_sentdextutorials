@@ -2,6 +2,8 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
+# this file was initially to test lambda but now is just a basic PLT example
+
 some_list = [1,2,3,4]
 some_dict = {1:np.array([[1],[2],[3],[4]])}
 
